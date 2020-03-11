@@ -1,0 +1,30 @@
+---
+apiVersion: build.pivotal.io/v1alpha1
+kind: Image
+metadata:
+  name: sample-java-image
+spec:
+  tag: pivotalashwin/image-from-git
+  builder:
+    kind: ClusterBuilder
+    name: bionic-builder
+  serviceAccount: default
+  source:
+    git:
+      url: https://github.com/buildpack/sample-java-app.git
+      revision: master
+---
+#apiVersion: build.pivotal.io/v1alpha1
+#kind: Image
+#metadata:
+#  name: goImage
+#spec:
+#  tag: pivotalashwin/image-from-git-sha
+#  builder:
+#    kind: Builder
+#    name: tiny-builder
+#  serviceAccount: default
+#  source:
+#    git:
+#      url: https://github.com/buildpack/sample-java-app.git
+#      revision: 0eccc6c2f01d9f055087ebbf03526ed0623e014a

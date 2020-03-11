@@ -1,0 +1,16 @@
+---
+apiVersion: build.pivotal.io/v1alpha1
+kind: ClusterBuilder
+metadata:
+  name: bionic-builder
+spec:
+  image: cloudfoundry/cnb:bionic
+  updatePolicy: polling
+---
+apiVersion: build.pivotal.io/v1alpha1
+kind: ClusterBuilder
+metadata:
+  name: tiny-builder
+spec:
+  image: cloudfoundry/cnb:tiny
+  updatePolicy: polling
